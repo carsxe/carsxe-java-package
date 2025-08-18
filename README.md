@@ -18,7 +18,7 @@ Add the following dependency to your `pom.xml` file:
 <dependency>
   <groupId>io.github.carsxe</groupId>
   <artifactId>carsxe-api</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
@@ -29,7 +29,7 @@ Add the following dependency to your `pom.xml` file:
 To use the library, you need to create an instance of the `CarsXE` class with your API key:
 
 ```java
-import io.github.carsxe.CarsXE;
+import io.github.carsxe;
 
 CarsXE carsxe = new CarsXE("YOUR_API_KEY");
 ```
