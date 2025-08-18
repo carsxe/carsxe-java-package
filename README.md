@@ -48,7 +48,7 @@ The CarsXE Java library provides methods corresponding to multiple endpoints. Be
 Map<String, String> params = new HashMap<>();
 params.put("vin", "WBAFR7C57CC811956");
 
-String specs = carsxe.specs(params);
+Map<String, Object> specs = carsxe.specs(params);
 System.out.println(specs);
 ```
 
@@ -58,7 +58,7 @@ System.out.println(specs);
 Map<String, String> params = new HashMap<>();
 params.put("vin", "WBAFR7C57CC811956");
 
-String marketValue = carsxe.marketvalue(params);
+Map<String, Object> marketValue = carsxe.marketvalue(params);
 System.out.println(marketValue);
 ```
 
@@ -68,7 +68,7 @@ System.out.println(marketValue);
 Map<String, String> params = new HashMap<>();
 params.put("vin", "WBAFR7C57CC811956");
 
-String history = carsxe.history(params);
+Map<String, Object> history = carsxe.history(params);
 System.out.println(history);
 ```
 
@@ -80,7 +80,7 @@ params.put("plate", "7XER187");
 params.put("state", "CA");
 params.put("country", "US");
 
-String plateInfo = carsxe.platedecoder(params);
+Map<String, Object> plateInfo = carsxe.platedecoder(params);
 System.out.println(plateInfo);
 ```
 
@@ -89,7 +89,7 @@ System.out.println(plateInfo);
 ```java
 String imageUrl = "https://api.carsxe.com/img/apis/plate_recognition.JPG";
 
-String plateRecognition = carsxe.plateImageRecognition(imageUrl);
+Map<String, Object> plateRecognition = carsxe.plateImageRecognition(imageUrl);
 System.out.println(plateRecognition);
 ```
 
@@ -98,7 +98,7 @@ System.out.println(plateRecognition);
 ```java
 String imageUrl = "https://user-images.githubusercontent.com/5663423/30922082-64edb4fa-a3a8-11e7-873e-3fbcdce8ea3a.png";
 
-String vinOcr = carsxe.vinOcr(imageUrl);
+Map<String, Object> vinOcr = carsxe.vinOcr(imageUrl);
 System.out.println(vinOcr);
 ```
 
@@ -110,7 +110,7 @@ params.put("year", "2023");
 params.put("make", "Toyota");
 params.put("model", "Camry");
 
-String ymm = carsxe.yearMakeModel(params);
+Map<String, Object> ymm = carsxe.yearMakeModel(params);
 System.out.println(ymm);
 ```
 
@@ -122,7 +122,7 @@ params.put("make", "BMW");
 params.put("model", "X5");
 params.put("year", "2019");
 
-String images = carsxe.images(params);
+Map<String, Object> images = carsxe.images(params);
 System.out.println(images);
 ```
 
@@ -132,7 +132,7 @@ System.out.println(images);
 Map<String, String> params = new HashMap<>();
 params.put("vin", "1C4JJXR64PW696340");
 
-String recalls = carsxe.recalls(params);
+Map<String, Object> recalls = carsxe.recalls(params);
 System.out.println(recalls);
 ```
 
@@ -142,7 +142,7 @@ System.out.println(recalls);
 Map<String, String> params = new HashMap<>();
 params.put("vin", "WF0MXXGBWM8R43240");
 
-String internationalVin = carsxe.internationalVinDecoder(params);
+Map<String, Object> internationalVin = carsxe.internationalVinDecoder(params);
 System.out.println(internationalVin);
 ```
 
@@ -152,7 +152,7 @@ System.out.println(internationalVin);
 Map<String, String> params = new HashMap<>();
 params.put("code", "P0115");
 
-String obdCodes = carsxe.obdcodesdecoder(params);
+Map<String, Object> obdCodes = carsxe.obdcodesdecoder(params);
 System.out.println(obdCodes);
 ```
 
@@ -175,15 +175,6 @@ Here is the list of supported endpoints:
 - `obdcodesdecoder` – Decode OBD error/diagnostic codes
 
 Refer to the [CarsXE API Documentation](https://api.carsxe.com/docs) for more details about parameters and response formats.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions to the CarsXE Java API Library! If you have ideas for improvements, bug fixes, or new features, please feel free to submit a pull request or open an issue on our GitHub repository.
-
-PRs and issues are welcome at:  
-🔗 [https://github.com/carsxe/carsxe-java-package](https://github.com/carsxe/carsxe-java-package)
 
 ---
 
