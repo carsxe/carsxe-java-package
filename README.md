@@ -29,7 +29,7 @@ Add the following dependency to your `pom.xml` file:
 To use the library, you need to create an instance of the `CarsXE` class with your API key:
 
 ```java
-import io.github.carsxe;
+import io.github.carsxe.CarsXE;
 
 CarsXE carsxe = new CarsXE("YOUR_API_KEY");
 ```
