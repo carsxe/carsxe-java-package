@@ -18,7 +18,7 @@ Add the following dependency to your `pom.xml` file:
 <dependency>
   <groupId>io.github.carsxe</groupId>
   <artifactId>carsxe-api</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
