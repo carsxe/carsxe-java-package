@@ -175,9 +175,3 @@ Here is the list of supported endpoints:
 - `obdcodesdecoder` – Decode OBD error/diagnostic codes
 
 Refer to the [CarsXE API Documentation](https://api.carsxe.com/docs) for more details about parameters and response formats.
-
----
-
-## 📄 License
-
-This library is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
