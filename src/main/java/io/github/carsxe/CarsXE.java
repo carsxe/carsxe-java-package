@@ -52,7 +52,9 @@ public class CarsXE {
 
         // Convert JSON response to Map using Jackson ObjectMapper
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(response.toString(), new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
+        return mapper.readValue(response.toString(),
+                new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {
+                });
     }
 
     private Map<String, Object> post(String urlString, String jsonBody, Map<String, String> headers) throws Exception {
@@ -86,7 +88,9 @@ public class CarsXE {
 
         // Convert JSON response to Map using Jackson ObjectMapper
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(response.toString(), new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
+        return mapper.readValue(response.toString(),
+                new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {
+                });
     }
 
     public Map<String, Object> specs(Map<String, String> params) throws Exception {
@@ -149,6 +153,11 @@ public class CarsXE {
 
     public Map<String, Object> obdcodesdecoder(Map<String, String> params) throws Exception {
         String url = buildUrl("obdcodesdecoder", params);
+        return fetch(url);
+    }
+
+    public Map<String, Object> LienAndTheft(Map<String, String> params) throws Exception {
+        String url = buildUrl("v1/lien-theft", params);
         return fetch(url);
     }
 }

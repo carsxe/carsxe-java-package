@@ -1,6 +1,8 @@
 # 🚗 CarsXE Java API Library
 
-The **CarsXE Java API Library** is a powerful and developer-friendly library that enables seamless integration with the CarsXE API. Access a wide range of vehicle data, including VIN decoding, market value estimation, license plate recognition, vehicle history, and more.
+The **CarsXE Java API Library** is a powerful and developer-friendly library that enables seamless integration with the CarsXE API. Access a wide range of vehicle data, including VIN decoding, market value estimation, license plate recognition, vehicle history, lien & theft checks, and more.
+
+**Java Version:** Java 21 LTS
 
 🌐 **Website:** [https://api.carsxe.com](https://api.carsxe.com)  
 📄 **Docs:** [https://api.carsxe.com/docs](https://api.carsxe.com/docs)  
@@ -156,6 +158,16 @@ Map<String, Object> obdCodes = carsxe.obdcodesdecoder(params);
 System.out.println(obdCodes);
 ```
 
+### Lien & Theft Check
+
+```java
+Map<String, String> params = new HashMap<>();
+params.put("vin", "2C3CDXFG1FH762860");
+
+Map<String, Object> lienTheft = carsxe.LienAndTheft(params);
+System.out.println(lienTheft);
+```
+
 ---
 
 ## 📋 Endpoints
@@ -173,5 +185,6 @@ Here is the list of supported endpoints:
 - `vinOcr` – Extract VINs from images using OCR
 - `yearMakeModel` – Query vehicle by year, make, model, and trim (optional)
 - `obdcodesdecoder` – Decode OBD error/diagnostic codes
+- `LienAndTheft` – Check for lien and theft records on a vehicle
 
 Refer to the [CarsXE API Documentation](https://api.carsxe.com/docs) for more details about parameters and response formats.

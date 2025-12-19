@@ -6,7 +6,7 @@
 
   <groupId>io.github.carsxe</groupId>
   <artifactId>carsxe</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
 
   <name>carsxe</name>
   <description>A powerful, easy-to-use API for vehicle data including specs, market value, license plate decoding, and more.</description>
