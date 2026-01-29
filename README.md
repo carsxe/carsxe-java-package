@@ -20,7 +20,7 @@ Add the following dependency to your `pom.xml` file:
 <dependency>
   <groupId>io.github.carsxe</groupId>
   <artifactId>carsxe</artifactId>
-  <version>1.0.4</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
