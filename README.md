@@ -56,9 +56,14 @@ System.out.println(specs);
 
 ### Market Value
 
+Required: `vin` — Optional: `state` (US state code), `mileage` (numeric), `condition` (`excellent` | `clean` | `average` | `rough`)
+
 ```java
 Map<String, String> params = new HashMap<>();
 params.put("vin", "WBAFR7C57CC811956");
+params.put("state", "CA");
+params.put("mileage", "45000");
+params.put("condition", "clean");
 
 Map<String, Object> marketValue = carsxe.marketvalue(params);
 System.out.println(marketValue);
@@ -177,7 +182,7 @@ Here is the list of supported endpoints:
 - `specs` – Decode VIN & get full vehicle specifications
 - `internationalVinDecoder` – Decode VIN with worldwide support
 - `platedecoder` – Decode license plate info (plate, state, country)
-- `marketvalue` – Estimate vehicle market value based on VIN
+- `marketvalue` – Estimate vehicle market value based on VIN (optional: `state`, `mileage`, `condition`)
 - `history` – Retrieve vehicle history (ownership, accidents, etc.)
 - `images` – Fetch images by make, model, year, trim
 - `recalls` – Get safety recall data for a VIN

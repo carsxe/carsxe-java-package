@@ -98,6 +98,9 @@ public class CarsXE {
         return fetch(url);
     }
 
+    // marketvalue: GET /v2/marketvalue
+    // Required: vin
+    // Optional: state (US state code), mileage (numeric), condition (excellent|clean|average|rough)
     public Map<String, Object> marketvalue(Map<String, String> params) throws Exception {
         String url = buildUrl("v2/marketvalue", params);
         return fetch(url);
