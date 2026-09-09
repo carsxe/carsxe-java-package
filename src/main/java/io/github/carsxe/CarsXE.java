@@ -245,12 +245,4 @@ public class CarsXE {
         String url = buildUrl("v1/ownership/zip", params);
         return fetch(url);
     }
-
-    // usPlatedecoder: GET /v1/us-platedecoder
-    // Required: plate, state
-    // Optional: decodeVIN (true|false)
-    public Map<String, Object> usPlatedecoder(Map<String, String> params) throws Exception {
-        String url = buildUrl("v1/us-platedecoder", params);
-        return fetch(url);
-    }
 }

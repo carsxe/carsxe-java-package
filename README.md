@@ -282,20 +282,6 @@ Map<String, Object> zipSearch = carsxe.ownershipZip(params);
 System.out.println(zipSearch);
 ```
 
-### US Plate Decoder
-
-Required: `plate`, `state` — Optional: `decodeVIN` (`true` | `false`)
-
-```java
-Map<String, String> params = new HashMap<>();
-params.put("plate", "H37SFS");
-params.put("state", "NJ");
-params.put("decodeVIN", "true");
-
-Map<String, Object> usPlate = carsxe.usPlatedecoder(params);
-System.out.println(usPlate);
-```
-
 ---
 
 ## 📋 Endpoints
@@ -324,6 +310,5 @@ Here is the list of supported endpoints:
 - `ownershipPerson` – Resolve contact info by name and address (Enterprise)
 - `ownershipAddress` – Find residents at a street address (Enterprise)
 - `ownershipZip` – Search people in a ZIP code with optional filters (Enterprise)
-- `usPlatedecoder` – Decode a US license plate (`plate`, `state`)
 
 Refer to the [CarsXE API Documentation](https://api.carsxe.com/docs) for more details about parameters and response formats.
