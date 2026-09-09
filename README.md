@@ -20,7 +20,7 @@ Add the following dependency to your `pom.xml` file:
 <dependency>
   <groupId>io.github.carsxe</groupId>
   <artifactId>carsxe</artifactId>
-  <version>1.1.0</version>
+  <version>1.3.0</version>
 </dependency>
 ```
 
@@ -173,6 +173,115 @@ Map<String, Object> lienTheft = carsxe.LienAndTheft(params);
 System.out.println(lienTheft);
 ```
 
+### Recalls by Year, Make, and Model
+
+Required: `year`, `make`, `model`
+
+```java
+Map<String, String> params = new HashMap<>();
+params.put("year", "2026");
+params.put("make", "toyota");
+params.put("model", "corolla");
+
+Map<String, Object> recallsYmm = carsxe.recallsYmm(params);
+System.out.println(recallsYmm);
+```
+
+### Recalls Batch
+
+Submit up to 10,000 VINs, poll status, then fetch JSON results or download CSV. Provide at least one of `vins`, `csv`, or `csvUrl`. Optional: `webhookUrl`.
+
+```java
+Map<String, Object> body = new HashMap<>();
+body.put("vins", List.of(
+    "1HGBH41JXMN109186",
+    "5YJSA1E26HF000001",
+    "1C4JJXR64PW696340"
+));
+
+Map<String, Object> submit = carsxe.recallsBatchSubmit(body);
+System.out.println(submit);
+
+Map<String, String> batchParams = new HashMap<>();
+batchParams.put("batchId", "brb_mnablbn7_wvbaqv");
+
+Map<String, Object> status = carsxe.recallsBatchStatus(batchParams);
+System.out.println(status);
+
+Map<String, Object> results = carsxe.recallsBatchResults(batchParams);
+System.out.println(results);
+
+String csv = carsxe.recallsBatchDownload(batchParams);
+System.out.println(csv);
+```
+
+### Year, Make, and Model Options
+
+Optional: `year`, `make`, `model`, `dimension` (`years` | `makes` | `models` | `trims` | `variants`), `trim`
+
+```java
+Map<String, String> params = new HashMap<>();
+params.put("year", "2026");
+params.put("make", "Toyota");
+
+Map<String, Object> options = carsxe.ymmOptions(params);
+System.out.println(options);
+```
+
+### Ownership by VIN
+
+Enterprise only. Required: `vin` — Optional: `include` (`demographics`, `emails`, `phones`, `vehicle_history`)
+
+```java
+Map<String, String> params = new HashMap<>();
+params.put("vin", "1FT8X3BT0BEA61538");
+
+Map<String, Object> ownership = carsxe.ownershipVin(params);
+System.out.println(ownership);
+```
+
+### Ownership by Person
+
+Enterprise only. Required: `first_name`, `last_name`, `address`, `zip` — Optional: `include`
+
+```java
+Map<String, String> params = new HashMap<>();
+params.put("first_name", "John");
+params.put("last_name", "Sample");
+params.put("address", "123 Example St");
+params.put("zip", "90210");
+
+Map<String, Object> person = carsxe.ownershipPerson(params);
+System.out.println(person);
+```
+
+### Ownership by Address
+
+Enterprise only. Required: `address`, `zip` — Optional: `include`
+
+```java
+Map<String, String> params = new HashMap<>();
+params.put("address", "123 Example St");
+params.put("zip", "90210");
+
+Map<String, Object> residents = carsxe.ownershipAddress(params);
+System.out.println(residents);
+```
+
+### Ownership by ZIP
+
+Enterprise only. Required: `zip` — Optional: `gender`, `min_age`, `max_age`, `income`, `page`, `limit`, `include`
+
+```java
+Map<String, String> params = new HashMap<>();
+params.put("zip", "90210");
+params.put("gender", "f");
+params.put("min_age", "45");
+
+Map<String, Object> zipSearch = carsxe.ownershipZip(params);
+System.out.println(zipSearch);
+```
+
 ---
 
 ## 📋 Endpoints
@@ -191,5 +300,15 @@ Here is the list of supported endpoints:
 - `yearMakeModel` – Query vehicle by year, make, model, and trim (optional)
 - `obdcodesdecoder` – Decode OBD error/diagnostic codes
 - `LienAndTheft` – Check for lien and theft records on a vehicle
+- `recallsYmm` – Get safety recall data by year, make, and model (no VIN)
+- `recallsBatchSubmit` – Submit a bulk VIN recall batch (`vins`, `csv`, or `csvUrl`)
+- `recallsBatchStatus` – Poll recall batch status by `batchId`
+- `recallsBatchResults` – Fetch recall batch results as JSON
+- `recallsBatchDownload` – Download recall batch results as CSV
+- `ymmOptions` – List years, makes, models, trims, or variants for dropdowns
+- `ownershipVin` – Look up registered owner(s) by VIN (Enterprise)
+- `ownershipPerson` – Resolve contact info by name and address (Enterprise)
+- `ownershipAddress` – Find residents at a street address (Enterprise)
+- `ownershipZip` – Search people in a ZIP code with optional filters (Enterprise)
 
 Refer to the [CarsXE API Documentation](https://api.carsxe.com/docs) for more details about parameters and response formats.
