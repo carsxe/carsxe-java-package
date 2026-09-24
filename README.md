@@ -4,9 +4,18 @@ The **CarsXE Java API Library** is a powerful and developer-friendly library tha
 
 **Java Version:** Java 21 LTS
 
-🌐 **Website:** [https://api.carsxe.com](https://api.carsxe.com)  
-📄 **Docs:** [https://api.carsxe.com/docs](https://api.carsxe.com/docs)  
-📦 **All Products:** [https://api.carsxe.com/all-products](https://api.carsxe.com/all-products)
+🌐 **Website:** [https://carsxe.com](https://carsxe.com)  
+📄 **Docs:** [https://docs.carsxe.com](https://docs.carsxe.com)
+
+### Products
+
+- [Vehicle History](https://carsxe.com/vehicle-history)
+- [Vehicle Plate Decoder](https://carsxe.com/vehicle-plate-decoder)
+- [Vehicle Specifications](https://carsxe.com/vehicle-specifications)
+- [International VIN Decoder](https://carsxe.com/international-vin-decoder)
+- [Vehicle Images](https://carsxe.com/vehicle-images)
+- [Vehicle Recalls](https://carsxe.com/vehicle-recalls)
+- [Vehicle Market Value](https://carsxe.com/vehicle-market-value)
 
 ---
 
@@ -36,7 +45,7 @@ import io.github.carsxe.CarsXE;
 CarsXE carsxe = new CarsXE("YOUR_API_KEY");
 ```
 
-Replace `YOUR_API_KEY` with your own CarsXE API key. You can get your API key by signing up at [CarsXE](https://api.carsxe.com).
+Replace `YOUR_API_KEY` with your own CarsXE API key. You can get your API key by signing up at [CarsXE](https://carsxe.com).
 
 ---
 
@@ -44,7 +53,7 @@ Replace `YOUR_API_KEY` with your own CarsXE API key. You can get your API key by
 
 The CarsXE Java library provides methods corresponding to multiple endpoints. Below are examples for **all available products**:
 
-### VIN Specifications
+### [VIN Specifications](https://carsxe.com/vehicle-specifications)
 
 ```java
 Map<String, String> params = new HashMap<>();
@@ -54,7 +63,7 @@ Map<String, Object> specs = carsxe.specs(params);
 System.out.println(specs);
 ```
 
-### Market Value
+### [Market Value](https://carsxe.com/vehicle-market-value)
 
 Required: `vin` — Optional: `state` (US state code), `mileage` (numeric), `condition` (`excellent` | `clean` | `average` | `rough`)
 
@@ -69,7 +78,7 @@ Map<String, Object> marketValue = carsxe.marketvalue(params);
 System.out.println(marketValue);
 ```
 
-### Vehicle History
+### [Vehicle History](https://carsxe.com/vehicle-history)
 
 ```java
 Map<String, String> params = new HashMap<>();
@@ -79,7 +88,7 @@ Map<String, Object> history = carsxe.history(params);
 System.out.println(history);
 ```
 
-### License Plate Decoder
+### [License Plate Decoder](https://carsxe.com/vehicle-plate-decoder)
 
 ```java
 Map<String, String> params = new HashMap<>();
@@ -91,10 +100,12 @@ Map<String, Object> plateInfo = carsxe.platedecoder(params);
 System.out.println(plateInfo);
 ```
 
-### License Plate Image Recognition
+### [License Plate Image Recognition](https://carsxe.com/vehicle-plate-decoder)
+
+![License plate recognition sample](https://imagedelivery.net/moyiiSImjJPI_EZVxNMBBw/f49aed53-d736-4370-f3f4-97418841c800/public)
 
 ```java
-String imageUrl = "https://api.carsxe.com/img/apis/plate_recognition.JPG";
+String imageUrl = "https://imagedelivery.net/moyiiSImjJPI_EZVxNMBBw/f49aed53-d736-4370-f3f4-97418841c800/public";
 
 Map<String, Object> plateRecognition = carsxe.plateImageRecognition(imageUrl);
 System.out.println(plateRecognition);
@@ -121,7 +132,7 @@ Map<String, Object> ymm = carsxe.yearMakeModel(params);
 System.out.println(ymm);
 ```
 
-### Vehicle Images
+### [Vehicle Images](https://carsxe.com/vehicle-images)
 
 ```java
 Map<String, String> params = new HashMap<>();
@@ -133,7 +144,7 @@ Map<String, Object> images = carsxe.images(params);
 System.out.println(images);
 ```
 
-### Vehicle Recalls
+### [Vehicle Recalls](https://carsxe.com/vehicle-recalls)
 
 ```java
 Map<String, String> params = new HashMap<>();
@@ -143,7 +154,7 @@ Map<String, Object> recalls = carsxe.recalls(params);
 System.out.println(recalls);
 ```
 
-### International VIN Decoder
+### [International VIN Decoder](https://carsxe.com/international-vin-decoder)
 
 ```java
 Map<String, String> params = new HashMap<>();
@@ -173,7 +184,7 @@ Map<String, Object> lienTheft = carsxe.LienAndTheft(params);
 System.out.println(lienTheft);
 ```
 
-### Recalls by Year, Make, and Model
+### [Recalls by Year, Make, and Model](https://carsxe.com/vehicle-recalls)
 
 Required: `year`, `make`, `model`
 
@@ -187,7 +198,7 @@ Map<String, Object> recallsYmm = carsxe.recallsYmm(params);
 System.out.println(recallsYmm);
 ```
 
-### Recalls Batch
+### [Recalls Batch](https://carsxe.com/vehicle-recalls)
 
 Submit up to 10,000 VINs, poll status, then fetch JSON results or download CSV. Provide at least one of `vins`, `csv`, or `csvUrl`. Optional: `webhookUrl`.
 
@@ -288,27 +299,27 @@ System.out.println(zipSearch);
 
 Here is the list of supported endpoints:
 
-- `specs` – Decode VIN & get full vehicle specifications
-- `internationalVinDecoder` – Decode VIN with worldwide support
-- `platedecoder` – Decode license plate info (plate, state, country)
-- `marketvalue` – Estimate vehicle market value based on VIN (optional: `state`, `mileage`, `condition`)
-- `history` – Retrieve vehicle history (ownership, accidents, etc.)
-- `images` – Fetch images by make, model, year, trim
-- `recalls` – Get safety recall data for a VIN
-- `plateImageRecognition` – Read & decode plates from images
+- `specs` – Decode VIN & get full vehicle specifications ([Vehicle Specifications](https://carsxe.com/vehicle-specifications))
+- `internationalVinDecoder` – Decode VIN with worldwide support ([International VIN Decoder](https://carsxe.com/international-vin-decoder))
+- `platedecoder` – Decode license plate info (plate, state, country) ([Vehicle Plate Decoder](https://carsxe.com/vehicle-plate-decoder))
+- `marketvalue` – Estimate vehicle market value based on VIN (optional: `state`, `mileage`, `condition`) ([Vehicle Market Value](https://carsxe.com/vehicle-market-value))
+- `history` – Retrieve vehicle history (ownership, accidents, etc.) ([Vehicle History](https://carsxe.com/vehicle-history))
+- `images` – Fetch images by make, model, year, trim ([Vehicle Images](https://carsxe.com/vehicle-images))
+- `recalls` – Get safety recall data for a VIN ([Vehicle Recalls](https://carsxe.com/vehicle-recalls))
+- `plateImageRecognition` – Read & decode plates from images ([Vehicle Plate Decoder](https://carsxe.com/vehicle-plate-decoder))
 - `vinOcr` – Extract VINs from images using OCR
 - `yearMakeModel` – Query vehicle by year, make, model, and trim (optional)
 - `obdcodesdecoder` – Decode OBD error/diagnostic codes
 - `LienAndTheft` – Check for lien and theft records on a vehicle
-- `recallsYmm` – Get safety recall data by year, make, and model (no VIN)
-- `recallsBatchSubmit` – Submit a bulk VIN recall batch (`vins`, `csv`, or `csvUrl`)
-- `recallsBatchStatus` – Poll recall batch status by `batchId`
-- `recallsBatchResults` – Fetch recall batch results as JSON
-- `recallsBatchDownload` – Download recall batch results as CSV
+- `recallsYmm` – Get safety recall data by year, make, and model (no VIN) ([Vehicle Recalls](https://carsxe.com/vehicle-recalls))
+- `recallsBatchSubmit` – Submit a bulk VIN recall batch (`vins`, `csv`, or `csvUrl`) ([Vehicle Recalls](https://carsxe.com/vehicle-recalls))
+- `recallsBatchStatus` – Poll recall batch status by `batchId` ([Vehicle Recalls](https://carsxe.com/vehicle-recalls))
+- `recallsBatchResults` – Fetch recall batch results as JSON ([Vehicle Recalls](https://carsxe.com/vehicle-recalls))
+- `recallsBatchDownload` – Download recall batch results as CSV ([Vehicle Recalls](https://carsxe.com/vehicle-recalls))
 - `ymmOptions` – List years, makes, models, trims, or variants for dropdowns
 - `ownershipVin` – Look up registered owner(s) by VIN (Enterprise)
 - `ownershipPerson` – Resolve contact info by name and address (Enterprise)
 - `ownershipAddress` – Find residents at a street address (Enterprise)
 - `ownershipZip` – Search people in a ZIP code with optional filters (Enterprise)
 
-Refer to the [CarsXE API Documentation](https://api.carsxe.com/docs) for more details about parameters and response formats.
+Refer to the [CarsXE API Documentation](https://docs.carsxe.com) for more details about parameters and response formats.

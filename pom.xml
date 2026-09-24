@@ -10,7 +10,7 @@
 
   <name>carsxe</name>
   <description>A powerful, easy-to-use API for vehicle data including specs, market value, license plate decoding, and more.</description>
-  <url>https://api.carsxe.com</url>
+  <url>https://carsxe.com</url>
 
   <licenses>
     <license>
@@ -24,13 +24,13 @@
       <name>CarsXE Developer</name>
       <email>devops@carsxe.com</email>
       <organization>carsxe</organization>
-      <organizationUrl>https://api.carsxe.com</organizationUrl>
+      <organizationUrl>https://carsxe.com</organizationUrl>
     </developer>
     <developer>
       <name>Omar Walied</name>
       <email>omar.walied@carsxe.com</email>
       <organization>carsxe</organization>
-      <organizationUrl>https://api.carsxe.com</organizationUrl>
+      <organizationUrl>https://carsxe.com</organizationUrl>
     </developer>
   </developers>
 
