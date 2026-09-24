@@ -102,8 +102,10 @@ System.out.println(plateInfo);
 
 ### [License Plate Image Recognition](https://carsxe.com/vehicle-plate-decoder)
 
+![License plate recognition sample](https://imagedelivery.net/moyiiSImjJPI_EZVxNMBBw/f49aed53-d736-4370-f3f4-97418841c800/public)
+
 ```java
-String imageUrl = "https://api.carsxe.com/img/apis/plate_recognition.JPG";
+String imageUrl = "https://imagedelivery.net/moyiiSImjJPI_EZVxNMBBw/f49aed53-d736-4370-f3f4-97418841c800/public";
 
 Map<String, Object> plateRecognition = carsxe.plateImageRecognition(imageUrl);
 System.out.println(plateRecognition);
